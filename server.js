@@ -10,8 +10,8 @@ const app       =   express();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.jason());
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname , 'public')));
 app.listen(port, () =>{
-    console.log(`Starting server on port ${port}`);
+    console.log(`Starting server on server port ${port}`);
 });
