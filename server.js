@@ -18,6 +18,16 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname , 'public')));
+
+app.get('/' , (req,res, next) => {
+    res.send('Hello from my application');
+});
+
+app.get('/:id', (req, res, next) => {
+    res.send(req.params);
+});
+
+
 app.listen(port, () =>{
     console.log(`Starting server on server port ${port}`);
 });
