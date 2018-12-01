@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
 const cors       = require('cors');
 const config     = require('./config/database');
-
+const lawnRouter = require('./models/lawn');
 
 mongoose.connect(config.database)
     .then(() => console.log('connected to mongodb'))
@@ -19,13 +19,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname , 'public')));
 
-app.get('/' , (req,res, next) => {
-    res.send('Hello from my application');
-});
-
+app.use('/lawns', lawnRouter);
+/*
 app.get('/:id', (req, res, next) => {
     res.send(req.params);
 });
+*/
 
 
 app.listen(port, () =>{

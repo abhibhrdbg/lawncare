@@ -11,7 +11,7 @@ const ApplicationSchema =   mongoose.Schema({
         default: Date.now
     },
     amount: {
-        type: number,
+        type: Number,
         required: true
     }
 });
