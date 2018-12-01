@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
 const cors       = require('cors');
 const config     = require('./config/database');
-const lawnRouter = require('./models/lawn');
+const lawnRouter = require('./routes/lawn');
 
 mongoose.connect(config.database)
     .then(() => console.log('connected to mongodb'))
