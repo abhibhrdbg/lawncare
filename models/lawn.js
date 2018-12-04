@@ -17,7 +17,7 @@ const ApplicationSchema =   mongoose.Schema({
 });
 
 const lawnSchema    =   mongoose.Schema({
-    Title: {
+    title: {
         type: String,
         required: true
     },
